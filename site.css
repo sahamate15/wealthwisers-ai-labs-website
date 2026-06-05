@@ -300,8 +300,11 @@ strong,b{font-weight:600;color:var(--ink);}
 .cta-form .cta-form-submit{align-self:flex-start;margin-top:4px;cursor:pointer;-webkit-appearance:none;appearance:none;font-family:var(--font-sans);}
 .cta-form .f-note{font-family:var(--font-mono);font-size:11.5px;line-height:1.55;color:#7fa9a2;}
 .cta-form label .req{font-family:var(--font-mono);font-size:10px;letter-spacing:0.05em;color:#9ec7c0;font-weight:400;text-transform:none;}
-.cta-form .cf-err{display:block;margin-top:7px;font-family:var(--font-mono);font-size:11.5px;line-height:1.4;color:#fecaca;}
+.cta-form .cf-err{margin-top:7px;font-family:var(--font-mono);font-size:11.5px;line-height:1.4;color:#fecaca;}
+.cta-form .cf-err[hidden]{display:none;}
 .cta-form input.is-invalid,.cta-form textarea.is-invalid{border-color:#fca5a5;box-shadow:0 0 0 3px rgba(248,113,113,0.18);}
+.cta-form .form-success{margin:0;background:#F7F4ED;color:#1B2A3D;border-radius:var(--radius-lg);padding:28px 24px;text-align:center;font-family:var(--font-display);font-size:19px;line-height:1.5;}
+.cta-form .form-error{margin:10px 0 0;font-family:var(--font-mono);font-size:12px;line-height:1.5;color:#fecaca;}
 
 /* ---------- footer ---------- */
 .footer{background:var(--surface-darker);color:#9ec7c0;padding:72px 0 56px;}

@@ -6,8 +6,15 @@
   publish = "."
   command = ""
 
-# The contact form uses Netlify Forms. The form markup in index.html carries
-# data-netlify="true", so Netlify detects it on deploy; no build plugin needed.
+# The contact form posts via client-side JS to a Google Apps Script web app
+# (it writes a row to a Google Sheet). That endpoint URL is intentionally public
+# in the page JS; no tokens or secrets live in this repo. No Netlify Forms.
+
+# Serve the QR-destination contact page directly at /contact (no redirect hop).
+[[redirects]]
+  from = "/contact"
+  to = "/contact/index.html"
+  status = 200
 
 [[headers]]
   for = "/*"

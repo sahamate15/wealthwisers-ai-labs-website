@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talk to us about Samriddhi: WealthWisers AI Labs</title>
+<meta name="description" content="Tell us about your firm. WealthWisers AI Labs takes on one to three firms at a time.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/logo-mark.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0f3d39">
+<link rel="canonical" href="https://ai-labs.wealthwisers.in/contact/">
+<link rel="stylesheet" href="../site.css">
+<script src="../contact.js" defer></script>
+<style>
+  /* Focused QR-destination contact page. Cream, mobile-first, non-navigable:
+     the only way out is the logo, which links home. Reuses the site's form
+     styling (the on-dark .cta-form) inside a teal card. */
+  body{background:#F7F4ED;}
+  .c-wrap{max-width:520px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding:36px 22px 40px;}
+  .c-head{display:flex;justify-content:center;margin-bottom:34px;}
+  .c-head .logo .name{font-size:19px;}
+  .c-intro{text-align:center;margin-bottom:26px;}
+  .c-intro h1{font-family:var(--font-display);font-weight:600;font-size:clamp(28px,7.4vw,38px);line-height:1.1;letter-spacing:-0.01em;color:var(--ink);margin:0;text-wrap:balance;}
+  .c-intro .sub{font-size:17px;line-height:1.5;color:var(--slate-700);margin:14px auto 0;max-width:34ch;}
+  .contact-card{background:var(--gradient-trust);border-radius:var(--radius-xl);padding:26px 22px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);}
+  .contact-card::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 380px at 12% 120%,rgba(251,191,36,0.16),transparent 55%);pointer-events:none;}
+  .contact-card .cta-form{position:relative;background:transparent;border:none;padding:0;}
+  .contact-card .cta-form .cta-form-submit{align-self:stretch;justify-content:center;margin-top:6px;}
+  .c-foot{margin-top:auto;padding-top:34px;text-align:center;}
+  .c-foot p{font-family:var(--font-mono);font-size:11.5px;line-height:1.65;color:var(--slate-500);margin:0;max-width:44ch;margin-inline:auto;}
+</style>
+</head>
+<body>
+<div class="c-wrap">
+  <header class="c-head">
+    <a class="logo" href="https://ai-labs.wealthwisers.in/" aria-label="WealthWisers AI Labs home">
+      <img src="../assets/logo-mark.svg" alt="">
+      <span class="wm">
+        <span class="name">WealthWisers <span class="ai">AI Labs</span></span>
+        <span class="tag">Governed AI for financial markets</span>
+      </span>
+    </a>
+  </header>
+
+  <div class="c-intro">
+    <h1>Talk to us about Samriddhi.</h1>
+    <p class="sub">We take on one to three firms at a time. Tell us about yours.</p>
+  </div>
+
+  <div class="contact-card">
+    <form class="cta-form" id="contact-form" name="contact">
+      <input type="hidden" name="page" value="Contact / QR page">
+      <p class="hp" aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="f-row">
+        <label for="cf-name">Name <span class="req">required</span></label>
+        <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-err">
+        <span class="cf-err" id="cf-name-err" hidden>Please add your name so we can reply.</span>
+      </div>
+      <div class="f-row">
+        <label for="cf-firm">Firm</label>
+        <input id="cf-firm" name="firm" type="text" autocomplete="organization">
+      </div>
+      <div class="f-row">
+        <label for="cf-email">Work email</label>
+        <input id="cf-email" name="email" type="email" autocomplete="email">
+      </div>
+      <div class="f-row">
+        <label for="cf-phone">Phone number</label>
+        <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+      </div>
+      <div class="f-row">
+        <label for="cf-message">What would you like to discuss?</label>
+        <textarea id="cf-message" name="message" rows="4" placeholder="Inquiry for agentic AI in my firm"></textarea>
+      </div>
+      <button class="btn btn-ondark btn-lg cta-form-submit" type="submit">Request a conversation</button>
+    </form>
+  </div>
+
+  <footer class="c-foot">
+    <p>Software for advisers; not investment advice. WealthWisers AI Labs is a distinct entity, separate from WealthWisers Technologies.</p>
+  </footer>
+</div>
+</body>
+</html>
