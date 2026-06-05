@@ -14,6 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"/>
+<!-- Shared case-page shell: brand fonts + the one header/CTA/footer (see ../case-shell.css) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"/>
+<link rel="stylesheet" href="../case-shell.css"/>
 
 <!--
   v2 build notes:
@@ -2166,12 +2169,48 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 </head>
 <body>
 
+<!-- ===================== SHARED SITE HEADER ===================== -->
+<header class="wwc-header" id="wwc-header">
+  <div class="wwc-wrap wwc-nav">
+    <a class="wwc-logo" href="../../../" aria-label="WealthWisers AI Labs home">
+      <img src="../../../assets/logo-mark.svg" alt="">
+      <span class="wwc-wm">
+        <span class="wwc-name">WealthWisers <i>AI Labs</i></span>
+        <span class="wwc-tag">Governed AI for financial markets</span>
+      </span>
+    </a>
+    <nav class="wwc-nav-links" aria-label="Primary">
+      <a href="../../../#employees">Digital employees</a>
+      <a href="../../../#ecas">eCAS &amp; reviews</a>
+      <a href="../../../#security">Security</a>
+      <a href="../../../#opensource">Open source</a>
+      <a href="../../../#pricing">Pricing</a>
+    </nav>
+    <div class="wwc-nav-cta">
+      <a class="wwc-btn wwc-btn-secondary" href="../../">All walkthroughs</a>
+      <a class="wwc-btn wwc-btn-primary" href="../../../#talk">Request a conversation</a>
+      <button class="wwc-menu-btn" id="wwc-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="wwc-mobile" id="wwc-mobile">
+    <a href="../../../#employees">Digital employees</a>
+    <a href="../../../#ecas">eCAS &amp; reviews</a>
+    <a href="../../../#security">Security</a>
+    <a href="../../../#opensource">Open source</a>
+    <a href="../../../#pricing">Pricing</a>
+    <a href="../../">All walkthroughs</a>
+    <a class="wwc-btn wwc-btn-primary" href="../../../#talk">Request a conversation</a>
+  </div>
+</header>
+
 <!-- =======================================================
      Platform-style breadcrumb row (matches app/cases/[id]/page.tsx)
      ======================================================= -->
 <div class="case-toolbar">
   <div class="breadcrumbs">
-    <a href="../../">Cases</a>
+    <a href="../../">Walkthroughs</a>
     <span class="crumb-sep">/</span>
     <span class="crumb-current">Rajiv Surana · Q2 Quarterly Review Prep</span>
     <span class="frozen-pill">
@@ -3375,11 +3414,61 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   </div>
 
   <footer class="page-foot">
-    <span>Samriddhi 2 / case_arch09_b</span>
+    <span>Portfolio Diagnostics</span>
     <span>Data Snapshot 24 April 2026 / Decided by Rohan Kapoor, fee-only advisor</span>
   </footer>
 
 </main>
+
+<!-- ===================== SHARED CLOSING CTA ===================== -->
+<section class="wwc-cta">
+  <div class="wwc-wrap">
+    <span class="wwc-eyebrow"><span class="wwc-rule"></span> Decision support, on your book</span>
+    <h2>Run this review on your own clients.</h2>
+    <p>This walkthrough is one frozen case. On your firm's own deployment, Samriddhi reads your live book and returns the same per-holding verdicts, each with the evidence behind the call. Tell us about your firm and we will show you.</p>
+    <div class="wwc-cta-actions">
+      <a class="wwc-btn wwc-btn-ondark wwc-btn-lg" href="../../../#talk">Request a conversation</a>
+      <a class="wwc-btn wwc-btn-ondark-ghost wwc-btn-lg" href="../investment-proposal/">See the investment proposal walkthrough</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SHARED SITE FOOTER ===================== -->
+<footer class="wwc-foot">
+  <div class="wwc-wrap">
+    <div class="wwc-foot-top">
+      <div class="wwc-foot-col wwc-foot-brand">
+        <a class="wwc-logo" href="../../../" aria-label="WealthWisers AI Labs home">
+          <img src="../../../assets/logo-mark-inverse.svg" alt="">
+          <span class="wwc-wm">
+            <span class="wwc-name">WealthWisers <i>AI Labs</i></span>
+            <span class="wwc-tag">Governed AI for financial markets</span>
+          </span>
+        </a>
+        <p>Digital analysts that read client portfolios and turn them into client-ready decisions, on one secure environment built for your firm alone.</p>
+      </div>
+      <div class="wwc-foot-col">
+        <h5>Walkthroughs</h5>
+        <a href="../portfolio-diagnostics/">Portfolio diagnostics</a>
+        <a href="../investment-proposal/">Investment proposal</a>
+        <a href="../../">All walkthroughs</a>
+        <a href="../../../deck/samriddhi-ai-labs-deck.pdf" download>Download the deck</a>
+      </div>
+      <div class="wwc-foot-col">
+        <h5>Contact</h5>
+        <a href="mailto:connect@wealthwisers.in">connect@wealthwisers.in</a>
+        <a href="tel:+919717074506">+91 97170 74506</a>
+        <a href="../../../#talk">Request a conversation</a>
+        <p>C-108, Noida One, Sector 62, Noida, India</p>
+      </div>
+    </div>
+    <p class="wwc-disc">WealthWisers AI Labs provides software and decision support for financial professionals. <b>Nothing here constitutes investment advice</b>, a recommendation to buy or sell any security or financial product, or a regulatory, legal, or compliance opinion. Fund names, portfolio figures, and case examples shown are illustrative and do not represent real clients. Our products support human professionals; they do not replace professional judgment or regulatory accountability. WealthWisers AI Labs is a distinct entity, separate from WealthWisers Technologies.</p>
+    <div class="wwc-foot-legal">
+      <span>&copy; 2026 WealthWisers AI Labs</span>
+      <span>Evidence. Governance. Accountability.</span>
+    </div>
+  </div>
+</footer>
 
 <!-- =======================================================
      Inline JS, palette toggle + chart rendering
@@ -3882,6 +3971,29 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   renderCorrMatrix();
   wireRRTabs();
 })();
+</script>
+
+<!-- Shared header behaviour: scrolled border + mobile menu toggle -->
+<script>
+  (function () {
+    var header = document.getElementById('wwc-header');
+    if (header) {
+      var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+    }
+    var mb = document.getElementById('wwc-menu-btn'), mm = document.getElementById('wwc-mobile');
+    if (mb && mm) {
+      mb.addEventListener('click', function () {
+        var open = mm.classList.toggle('open');
+        mb.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      mm.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          mm.classList.remove('open'); mb.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  })();
 </script>
 
 </body>
