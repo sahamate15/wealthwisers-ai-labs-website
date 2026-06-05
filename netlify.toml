@@ -1,0 +1,28 @@
+# Netlify configuration, WealthWisers AI Labs website.
+# Static site, no build step. Connect this repo in the Netlify UI for Git-based
+# auto-deploy. Never put a token in this file or anywhere in the repo.
+
+[build]
+  publish = "."
+  command = ""
+
+# The contact form uses Netlify Forms. The form markup in index.html carries
+# data-netlify="true", so Netlify detects it on deploy; no build plugin needed.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/deck/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

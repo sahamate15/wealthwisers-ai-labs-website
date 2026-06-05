@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Pre-commit gate: no secrets and no long dashes enter history.
+set -uo pipefail
+ROOT="$(git rev-parse --show-toplevel)"
+
+if ! bash "$ROOT/scripts/secret-scan.sh" --staged; then
+  echo "Commit blocked by secret-scan. Override only if certain: git commit --no-verify" >&2
+  exit 1
+fi
+
+# Brand rule: no em dash, en dash, horizontal bar, or figure dash anywhere.
+dash="$(git diff --cached -U0 --diff-filter=ACMR 2>/dev/null \
+  | grep -E '^\+' | grep -vE '^\+\+\+' \
+  | perl -ne 'print "$.: $_" if /[\x{2012}\x{2013}\x{2014}\x{2015}]/' || true)"
+if [ -n "$dash" ]; then
+  echo "Commit blocked: long dash in staged content." >&2
+  echo "Brand rule: use commas, semicolons, colons, periods. Offending added lines:" >&2
+  printf '%s\n' "$dash" >&2
+  echo "Override only if certain: git commit --no-verify" >&2
+  exit 1
+fi
+
+echo "pre-commit: clean (no secrets, no long dashes)"
+exit 0

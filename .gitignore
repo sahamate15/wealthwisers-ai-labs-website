@@ -1,0 +1,28 @@
+# WealthWisers AI Labs website, ignore rules.
+# This repo intentionally tracks NO secrets and NO Claude working materials.
+
+# Secrets and tokens (defense in depth; the real tokens live OUTSIDE this repo)
+*.txt
+!robots.txt
+*_PAT*
+*.pat
+.env
+.env.*
+netlify_PAT*
+
+# Local Netlify state
+.netlify/
+
+# Claude Code local approvals and machine-specific settings
+.claude/.approvals/
+.claude/settings.local.json
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Node (the site needs none; only here if tooling is ever added)
+node_modules/
+npm-debug.log*
