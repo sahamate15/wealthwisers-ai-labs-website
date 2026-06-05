@@ -90,7 +90,8 @@
 /* ---------- closing CTA (teal) ---------- */
 .wwc-cta{background:var(--wwc-grad);color:#fff;position:relative;overflow:hidden;padding:96px 0;}
 .wwc-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 460px at 15% 120%,rgba(251,191,36,0.18),transparent 55%);pointer-events:none;}
-.wwc-cta .wwc-wrap{position:relative;max-width:780px;}
+.wwc-cta .wwc-wrap{position:relative;}
+.wwc-cta-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:start;}
 .wwc-eyebrow{font-family:var(--wwc-mono);font-weight:500;font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--wwc-amber-400);display:inline-flex;align-items:flex-start;gap:12px;margin-bottom:22px;}
 .wwc-eyebrow .wwc-rule{width:28px;height:2px;background:var(--wwc-amber-400);display:inline-block;flex:none;margin-top:9px;}
 .wwc-cta h2{font-family:var(--wwc-serif);font-weight:600;font-size:clamp(30px,3.4vw,44px);line-height:1.12;letter-spacing:-0.02em;color:#fff;margin:0;text-wrap:balance;}
@@ -114,7 +115,31 @@
 .wwc-foot-legal{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:32px;font-family:var(--wwc-mono);font-size:12.5px;letter-spacing:0.04em;color:#5e8a82;}
 @media (max-width:820px){ .wwc-foot-top{grid-template-columns:1fr;gap:36px;} .wwc-cta{padding:72px 0;} }
 
+/* ---------- inline contact form on the case CTA ----------
+   Same markup as the home/demo form (the one Netlify "contact" form);
+   styled on-dark to match site.css .cta-form. */
+.wwc-cta .cta-form{display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.05);border:1px solid rgba(153,246,228,0.18);border-radius:16px;padding:28px;}
+.wwc-cta .cta-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.wwc-cta .cta-form .f-row{display:flex;flex-direction:column;gap:7px;}
+.wwc-cta .cta-form label{font-family:var(--wwc-mono);font-size:11.5px;letter-spacing:0.07em;text-transform:uppercase;color:#9ec7c0;}
+.wwc-cta .cta-form label .req{font-size:10px;letter-spacing:0.05em;color:#9ec7c0;font-weight:400;text-transform:none;}
+.wwc-cta .cta-form input,.wwc-cta .cta-form textarea{width:100%;font-family:var(--wwc-sans);font-size:16px;color:#f0fdfa;background:rgba(255,255,255,0.06);border:1px solid rgba(153,246,228,0.22);border-radius:6px;padding:12px 14px;transition:border-color var(--wwc-dur),box-shadow var(--wwc-dur);}
+.wwc-cta .cta-form input::placeholder,.wwc-cta .cta-form textarea::placeholder{color:#7fa9a2;}
+.wwc-cta .cta-form input:focus,.wwc-cta .cta-form textarea:focus{outline:none;border-color:#2dd4bf;box-shadow:0 0 0 3px rgba(45,212,191,0.28);}
+.wwc-cta .cta-form textarea{resize:vertical;min-height:104px;}
+.wwc-cta .cta-form .cf-err{display:block;margin-top:7px;font-family:var(--wwc-mono);font-size:11.5px;line-height:1.4;color:#fecaca;}
+.wwc-cta .cta-form input.is-invalid,.wwc-cta .cta-form textarea.is-invalid{border-color:#fca5a5;box-shadow:0 0 0 3px rgba(248,113,113,0.18);}
+.wwc-cta .cta-form .cta-form-submit{align-self:flex-start;margin-top:4px;cursor:pointer;-webkit-appearance:none;appearance:none;}
+.wwc-cta .cta-form .f-note{font-family:var(--wwc-mono);font-size:11.5px;line-height:1.55;color:#7fa9a2;margin:0;}
+@media (max-width:880px){
+  .wwc-cta-grid{grid-template-columns:1fr;gap:36px;}
+  .wwc-cta-grid>*{min-width:0;}
+  .wwc-cta-grid .wwc-btn{white-space:normal;text-align:center;}
+}
+
 /* Honour reduced motion (the captured pages may not). */
 @media (prefers-reduced-motion:reduce){
   .wwc-btn,.wwc-header{transition:none;}
+  html{scroll-behavior:auto;}
 }
+html{scroll-behavior:smooth;}

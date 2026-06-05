@@ -286,7 +286,7 @@ strong,b{font-weight:600;color:var(--ink);}
 .cta-contact .row .tx{display:flex;flex-direction:column;gap:3px;}
 .cta-contact .row .lab{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:#8fbdb5;}
 .cta-contact .row .val{font-size:17px;color:#f0fdfa;font-weight:500;}
-@media (max-width:880px){.cta-grid{grid-template-columns:1fr;gap:40px;}}
+@media (max-width:880px){.cta-grid{grid-template-columns:1fr;gap:40px;}.cta-grid>*{min-width:0;}.cta-actions .btn{white-space:normal;text-align:center;}}
 
 /* contact form (Netlify Forms), on the dark CTA */
 .cta-form{display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.05);border:1px solid rgba(153,246,228,0.18);border-radius:var(--radius-xl);padding:28px;}
@@ -299,6 +299,9 @@ strong,b{font-weight:600;color:var(--ink);}
 .cta-form textarea{resize:vertical;min-height:104px;}
 .cta-form .cta-form-submit{align-self:flex-start;margin-top:4px;cursor:pointer;-webkit-appearance:none;appearance:none;font-family:var(--font-sans);}
 .cta-form .f-note{font-family:var(--font-mono);font-size:11.5px;line-height:1.55;color:#7fa9a2;}
+.cta-form label .req{font-family:var(--font-mono);font-size:10px;letter-spacing:0.05em;color:#9ec7c0;font-weight:400;text-transform:none;}
+.cta-form .cf-err{display:block;margin-top:7px;font-family:var(--font-mono);font-size:11.5px;line-height:1.4;color:#fecaca;}
+.cta-form input.is-invalid,.cta-form textarea.is-invalid{border-color:#fca5a5;box-shadow:0 0 0 3px rgba(248,113,113,0.18);}
 
 /* ---------- footer ---------- */
 .footer{background:var(--surface-darker);color:#9ec7c0;padding:72px 0 56px;}
