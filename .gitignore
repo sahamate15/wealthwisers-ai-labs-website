@@ -16,6 +16,7 @@ netlify_PAT*
 # Claude Code local approvals and machine-specific settings
 .claude/.approvals/
 .claude/settings.local.json
+.claude/launch.json
 
 # OS and editor noise
 .DS_Store

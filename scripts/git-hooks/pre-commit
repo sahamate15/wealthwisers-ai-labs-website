@@ -8,10 +8,14 @@ if ! bash "$ROOT/scripts/secret-scan.sh" --staged; then
   exit 1
 fi
 
-# Brand rule: no em dash, en dash, horizontal bar, or figure dash anywhere.
+# Brand rule: no long dashes in PROSE. Em dash and horizontal bar are always
+# prose, so always blocked. En dash and figure dash are blocked only when they
+# sit in prose (whitespace on either side, e.g. "advisors - they"); a tight,
+# unspaced en or figure dash inside a numeric range (18-22, Q3-Q4, 25-45%, a
+# minus) is permitted, so data values are never altered.
 dash="$(git diff --cached -U0 --diff-filter=ACMR 2>/dev/null \
   | grep -E '^\+' | grep -vE '^\+\+\+' \
-  | perl -ne 'print "$.: $_" if /[\x{2012}\x{2013}\x{2014}\x{2015}]/' || true)"
+  | perl -ne 'print "$.: $_" if /[\x{2014}\x{2015}]/ || /\s[\x{2012}\x{2013}]/ || /[\x{2012}\x{2013}]\s/' || true)"
 if [ -n "$dash" ]; then
   echo "Commit blocked: long dash in staged content." >&2
   echo "Brand rule: use commas, semicolons, colons, periods. Offending added lines:" >&2

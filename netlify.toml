@@ -26,3 +26,9 @@
   for = "/deck/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# Hashed, self-hosted fonts for the captured demo case (safe to cache forever)
+[[headers]]
+  for = "/demo/cases/*/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
